@@ -48,7 +48,7 @@ struct MusicVideo: Codable {
     let year: Int?
     let verified_credits: Bool?
     let artists: [Artist]?
-    let image: [ImageLink]?
+    let image: ImageLink?
 }
 
 struct Artist: Codable {
@@ -68,6 +68,7 @@ struct ImageLink: Codable {
     let b: String?
     /// 50x80
     let t: String?
+    /// No idea what size this is
     let s: String?
 }
 

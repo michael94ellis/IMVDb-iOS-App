@@ -64,7 +64,7 @@ struct IMVDb {
     
     mutating func makeRequest(for endPoint: EndPoint) {
         
-        let url = URL(string: self.searchVideosEndPoint + "?q=numb")!
+        let url = URL(string: self.searchVideosEndPoint + "?q=mamma+mia+abba")!
         var request = URLRequest(url: url)
         request.addValue(self.APIKeyValue, forHTTPHeaderField: self.APIKeyHeader)
         
@@ -76,9 +76,10 @@ struct IMVDb {
                 return output.data
             }
             .decode(type: MusicVideoSearchResults.self, decoder: JSONDecoder())
-            .sink(receiveCompletion: { _ in print("Completion") },
-                  receiveValue: {
-                    print($0.results?.forEach { print("\($0) \n")})
+            .sink(receiveCompletion: { print ("Search Completed: \($0)") },
+                  receiveValue: { results in
+                    print ("Received Movie Search Results: \n")
+                    results.results?.forEach { print($0.song_title!) }
                   })
     }
 }
