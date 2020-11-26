@@ -36,7 +36,7 @@ struct ContentView: View {
             Spacer()
             
             List(imvdb.musicVideos, id: \.id) { musicVideo in
-                Text(musicVideo.song_title ?? "NO TITLE")
+                MusicVideoRow(musicVideo: musicVideo)
             }
         }
         .padding(.top, 75)

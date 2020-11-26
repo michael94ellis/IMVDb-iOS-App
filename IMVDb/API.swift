@@ -92,8 +92,9 @@ class IMVDb: ObservableObject {
             .decode(type: MusicVideoSearchResults.self, decoder: JSONDecoder())
             .sink(receiveCompletion: { print ("Search Completed: \($0)") },
                   receiveValue: { results in
-                    print("New Videos: \(results.results?.count ?? 0)")
-                    self.musicVideos = results.results?.compactMap { $0 } ?? []
+                    DispatchQueue.main.async {
+                        self.musicVideos = results.results?.compactMap { $0 } ?? []
+                    }
                   })
     }
 }

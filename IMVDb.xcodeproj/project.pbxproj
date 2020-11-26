@@ -14,6 +14,7 @@
 		2FADB4F7256EA828000745A9 /* MusicVideoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */; };
 		2FADB4FA256EC10B000745A9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F9256EC10B000745A9 /* API.swift */; };
 		2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */; };
+		2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB503256F4667000745A9 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoRow.swift; sourceTree = "<group>"; };
 		2FADB4F9256EC10B000745A9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMVDbModels.swift; sourceTree = "<group>"; };
+		2FADB503256F4667000745A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2FADB4E8256EA7B8000745A9 /* ContentView.swift */,
 				2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */,
 				2FADB4F9256EC10B000745A9 /* API.swift */,
+				2FADB503256F4667000745A9 /* RemoteImage.swift */,
 				2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */,
 				2FADB4EA256EA7BC000745A9 /* Assets.xcassets */,
 				2FADB4EF256EA7BC000745A9 /* Info.plist */,
@@ -150,6 +153,7 @@
 				2FADB4FA256EC10B000745A9 /* API.swift in Sources */,
 				2FADB4E9256EA7B8000745A9 /* ContentView.swift in Sources */,
 				2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */,
+				2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */,
 				2FADB4F7256EA828000745A9 /* MusicVideoRow.swift in Sources */,
 				2FADB4E7256EA7B8000745A9 /* IMVDbApp.swift in Sources */,
 			);
