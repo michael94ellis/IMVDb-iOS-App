@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MusicVideo: Codable {
+struct MusicVideo: Codable, Identifiable {
     let id: Int
     let production_status: String?
     let song_title: String?

@@ -36,7 +36,7 @@ import Combine
 
 class IMVDb: ObservableObject {
     
-    static var shared = IMVDb()
+    @Published var musicVideos = [MusicVideo]()
     
     private let BaseURL = "https://imvdb.com/api/v1"
     private var searchVideosEndPoint: String { BaseURL + "/search/videos" }
@@ -92,8 +92,8 @@ class IMVDb: ObservableObject {
             .decode(type: MusicVideoSearchResults.self, decoder: JSONDecoder())
             .sink(receiveCompletion: { print ("Search Completed: \($0)") },
                   receiveValue: { results in
-                    print ("Received Movie Search Results: \n")
-                    results.results?.forEach { print($0.song_title!) }
+                    print("New Videos: \(results.results?.count ?? 0)")
+                    self.musicVideos = results.results?.compactMap { $0 } ?? []
                   })
     }
 }

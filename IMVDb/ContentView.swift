@@ -11,8 +11,8 @@ import Combine
 struct ContentView: View {
     
     @State var queryString: String = "Mamma Mia"
-    
-    
+    @ObservedObject var imvdb = IMVDb()
+
     var body: some View {
         VStack {
             Text("IMVDb Search")
@@ -24,7 +24,7 @@ struct ContentView: View {
             }
             .padding(.all, 30.0)
             Button(action: {
-                IMVDb.shared.makeRequest(for: .Videos, query: queryString.replacingOccurrences(of: " ", with: "+"))
+                imvdb.makeRequest(for: .Videos, query: queryString.replacingOccurrences(of: " ", with: "+"))
             }) {
                 Text("Search")
                     .frame(width: 110, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -34,6 +34,10 @@ struct ContentView: View {
                     .cornerRadius(20)
             }
             Spacer()
+            
+            List(imvdb.musicVideos, id: \.id) { musicVideo in
+                Text(musicVideo.song_title ?? "NO TITLE")
+            }
         }
         .padding(.top, 75)
     }
