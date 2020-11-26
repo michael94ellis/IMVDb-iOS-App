@@ -10,10 +10,32 @@ import Combine
 
 struct ContentView: View {
     
+    @State var queryString: String = "Mamma Mia"
+    
+    
     var body: some View {
-        Button("Hello, world!") {
-            IMVDb.shared.makeRequest(for: .Videos)
+        VStack {
+            Text("IMVDb Search")
+                .font(.largeTitle)
+            HStack {
+                Text("Search: ")
+                TextField("Query", text: $queryString)
+                    .padding(.leading, 10.0)
+            }
+            .padding(.all, 30.0)
+            Button(action: {
+                IMVDb.shared.makeRequest(for: .Videos, query: queryString.replacingOccurrences(of: " ", with: "+"))
+            }) {
+                Text("Search")
+                    .frame(width: 110, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(20)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+            }
+            Spacer()
         }
+        .padding(.top, 75)
     }
 }
 

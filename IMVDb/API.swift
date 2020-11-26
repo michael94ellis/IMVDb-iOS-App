@@ -34,41 +34,55 @@ import Combine
 ///     - featured_videos
 ///
 
-struct IMVDb {
+class IMVDb: ObservableObject {
     
     static var shared = IMVDb()
     
-    let BaseURL = "https://imvdb.com/api/v1"
-    let APIKeyHeader = "IMVDB-APP-KEY"
-    let APIKeyValue = "bhmiFPasJ1EeqjLDsMHqsIQ91zk42HCkFNeDSoa1"
+    private let BaseURL = "https://imvdb.com/api/v1"
+    private var searchVideosEndPoint: String { BaseURL + "/search/videos" }
+    private var searchEntitiesEndPoint: String { BaseURL + "/search/entities" }
+    private let APIKeyHeader = "IMVDB-APP-KEY"
+    private let APIKeyValue = "bhmiFPasJ1EeqjLDsMHqsIQ91zk42HCkFNeDSoa1"
     
-    enum EndPoint {
+    enum EndPointType {
         case Videos
         case Entities
     }
-    var searchVideosEndPoint: String { BaseURL + "/search/videos" }
-    var searchEntitiesEndPoint: String { BaseURL + "/search/entities" }
+    
     /// All searches via the IMVDb API have pagination built in. You can send these parameters with any search to affect the pagination
-    struct Parameters {
+    enum QueryParameters: String {
         /// Max value is 50.
-        static let PageSize = "per_page"
+        case PageSize = "per_page"
         /// The current page number.
-        static let Page = "page"
+        case Page = "page"
     }
     
     enum HTTPError: LocalizedError {
         case statusCode
     }
 
-    var cancellable: AnyCancellable?
+    var searchRequestNetworkCall: AnyCancellable?
     
-    mutating func makeRequest(for endPoint: EndPoint) {
-        
-        let url = URL(string: self.searchVideosEndPoint + "?q=mamma+mia+abba")!
-        var request = URLRequest(url: url)
+    func makeRequest(for endPoint: EndPointType, query: String, params: [QueryParameters: Int] = [:]) {
+        guard var urlBuilder = URLComponents(string: self.searchVideosEndPoint) else {
+            print("Error: Failed to make URL for \(#function)")
+            return
+        }
+        urlBuilder.queryItems = [URLQueryItem(name: "q", value: query)]
+        if !params.isEmpty {
+            urlBuilder.queryItems?.append(contentsOf: params.compactMap { URLQueryItem(name: $0.key.rawValue, value: String($0.value))})
+        }
+        guard let requestURL = urlBuilder.url else {
+            print("Error: Failed to make URL for \(#function)")
+            return
+        }
+        var request = URLRequest(url: requestURL)
         request.addValue(self.APIKeyValue, forHTTPHeaderField: self.APIKeyHeader)
-        
-        self.cancellable = URLSession.shared.dataTaskPublisher(for: request)
+        performNetworkCall(with: request)
+    }
+    
+    private func performNetworkCall(with request: URLRequest) {
+        searchRequestNetworkCall = URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output -> Data in
                 guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     throw HTTPError.statusCode

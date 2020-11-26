@@ -7,33 +7,6 @@
 
 import Foundation
 
-//["song_slug": mamma-mia,
-// "artists": <__NSSingleObjectArrayI 0x600002fd0100>(
-//        {
-//            name = Abba;
-//            slug = abba;
-//            url = "https://imvdb.com/n/abba";
-//        }
-//    )
-//, "id": 938884056168,
-//  "version_number": 1,
-//  "image": {
-//        b = "https://s3.amazonaws.com/images.imvdb.com/video/938884056168-abba-mamma-mia_music_video_bv.jpg";
-//        l = "https://s3.amazonaws.com/images.imvdb.com/video/938884056168-abba-mamma-mia_music_video_lv.jpg";
-//        o = "https://s3.amazonaws.com/images.imvdb.com/video/938884056168-abba-mamma-mia_music_video_ov.jpg";
-//        s = "https://s3.amazonaws.com/images.imvdb.com/video/938884056168-abba-mamma-mia_music_video_sv.jpg";
-//        t = "https://s3.amazonaws.com/images.imvdb.com/video/938884056168-abba-mamma-mia_music_video_tv.jpg";
-//  }   ,
-//  "song_title": Mamma Mia,
-//  "multiple_versions": 0,
-//  "production_status": r,
-//  "year": 1975,
-//  "aspect_ratio": <null>,
-//  "url": https://imvdb.com/video/abba/mamma-mia,
-//  "version_name": <null>,
-//  "is_imvdb_pick": 0,
-//  "verified_credits": 0
-
 struct MusicVideo: Codable {
     let id: Int
     let production_status: String?
@@ -48,7 +21,7 @@ struct MusicVideo: Codable {
     let year: Int?
     let verified_credits: Bool?
     let artists: [Artist]?
-    let image: ImageLink?
+    let image: ImageLinkArrayOrObject?
 }
 
 struct Artist: Codable {
@@ -78,4 +51,35 @@ struct MusicVideoSearchResults: Codable {
     let per_page: Int?
     let total_pages: Int?
     let results: [MusicVideo]?
+}
+
+extension MusicVideo {
+    /// This enables an inconsistent backend to send either single objects or arrays of an object
+    enum ImageLinkArrayOrObject: Codable {
+        case array([ImageLink])
+        case single(ImageLink)
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            do {
+                self = try .array(container.decode([ImageLink].self))
+            } catch DecodingError.typeMismatch {
+                do {
+                    self = try .single(container.decode(ImageLink.self))
+                } catch DecodingError.typeMismatch {
+                    throw DecodingError.typeMismatch(ImageLinkArrayOrObject.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Encoded payload not of an expected type"))
+                }
+            }
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            switch self {
+            case .array(let array):
+                try container.encode(array)
+            case .single(let single):
+                try container.encode(single)
+            }
+        }
+    }
 }
