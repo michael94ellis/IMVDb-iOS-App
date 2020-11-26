@@ -15,6 +15,7 @@
 		2FADB4FA256EC10B000745A9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F9256EC10B000745A9 /* API.swift */; };
 		2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */; };
 		2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB503256F4667000745A9 /* RemoteImage.swift */; };
+		2FADB50725700B0C000745A9 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB50625700B0C000745A9 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2FADB4F9256EC10B000745A9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMVDbModels.swift; sourceTree = "<group>"; };
 		2FADB503256F4667000745A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		2FADB50625700B0C000745A9 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		2FADB4DA256EA7B8000745A9 = {
 			isa = PBXGroup;
 			children = (
+				2FADB50625700B0C000745A9 /* ImageDownloader.swift */,
 				2FADB4E5256EA7B8000745A9 /* IMVDb */,
 				2FADB4E4256EA7B8000745A9 /* Products */,
 			);
@@ -152,6 +155,7 @@
 			files = (
 				2FADB4FA256EC10B000745A9 /* API.swift in Sources */,
 				2FADB4E9256EA7B8000745A9 /* ContentView.swift in Sources */,
+				2FADB50725700B0C000745A9 /* ImageDownloader.swift in Sources */,
 				2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */,
 				2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */,
 				2FADB4F7256EA828000745A9 /* MusicVideoRow.swift in Sources */,

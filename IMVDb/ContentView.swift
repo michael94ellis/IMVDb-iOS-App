@@ -20,9 +20,10 @@ struct ContentView: View {
             HStack {
                 Text("Search: ")
                 TextField("Query", text: $queryString)
-                    .padding(.leading, 10.0)
+                    .padding(10.0)
+                    .border(Color.black, width: 1)
             }
-            .padding(.all, 30.0)
+            .padding(30.0)
             Button(action: {
                 imvdb.makeRequest(for: .Videos, query: queryString.replacingOccurrences(of: " ", with: "+"))
             }) {
@@ -34,7 +35,7 @@ struct ContentView: View {
                     .cornerRadius(20)
             }
             Spacer()
-            
+            Divider()
             List(imvdb.musicVideos, id: \.id) { musicVideo in
                 MusicVideoRow(musicVideo: musicVideo)
             }
@@ -45,6 +46,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(queryString: "Mamma Mia", imvdb: IMVDb())
     }
 }

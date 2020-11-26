@@ -13,7 +13,7 @@ struct MusicVideoRow: View {
         
     var body: some View {
         HStack {
-            RemoteImage(url: (musicVideo.image?.first?.o)!)
+            RemoteImage<Text>(url: (musicVideo.image?.first?.o) ?? "", placeholder: { Text("Loading ...") })
                 .frame(width: 100, height: 100, alignment: .center)
             VStack {
                 Text(musicVideo.song_title ?? "No Song Title")
