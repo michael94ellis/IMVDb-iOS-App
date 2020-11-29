@@ -7,29 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1D274725729C9E00E2BED6 /* MusicVideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D274625729C9E00E2BED6 /* MusicVideoDetail.swift */; };
+		2F25BC172570279A00C0E250 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F25BC162570279A00C0E250 /* ImageDownloader.swift */; };
+		2FA82D2725715C0300CF883A /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA82D2625715C0300CF883A /* Searchbar.swift */; };
+		2FA82D2B257172B200CF883A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA82D2A257172B200CF883A /* ImageCache.swift */; };
 		2FADB4E7256EA7B8000745A9 /* IMVDbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4E6256EA7B8000745A9 /* IMVDbApp.swift */; };
-		2FADB4E9256EA7B8000745A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4E8256EA7B8000745A9 /* ContentView.swift */; };
+		2FADB4E9256EA7B8000745A9 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4E8256EA7B8000745A9 /* SearchList.swift */; };
 		2FADB4EB256EA7BC000745A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FADB4EA256EA7BC000745A9 /* Assets.xcassets */; };
 		2FADB4EE256EA7BC000745A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FADB4ED256EA7BC000745A9 /* Preview Assets.xcassets */; };
 		2FADB4F7256EA828000745A9 /* MusicVideoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */; };
-		2FADB4FA256EC10B000745A9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F9256EC10B000745A9 /* API.swift */; };
+		2FADB4FA256EC10B000745A9 /* IMVDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4F9256EC10B000745A9 /* IMVDbAPI.swift */; };
 		2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */; };
 		2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB503256F4667000745A9 /* RemoteImage.swift */; };
-		2FADB50725700B0C000745A9 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADB50625700B0C000745A9 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1D274625729C9E00E2BED6 /* MusicVideoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoDetail.swift; sourceTree = "<group>"; };
+		2F25BC162570279A00C0E250 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		2FA82D2625715C0300CF883A /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		2FA82D2A257172B200CF883A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		2FADB4E3256EA7B8000745A9 /* IMVDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMVDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FADB4E6256EA7B8000745A9 /* IMVDbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMVDbApp.swift; sourceTree = "<group>"; };
-		2FADB4E8256EA7B8000745A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2FADB4E8256EA7B8000745A9 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
 		2FADB4EA256EA7BC000745A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FADB4ED256EA7BC000745A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2FADB4EF256EA7BC000745A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoRow.swift; sourceTree = "<group>"; };
-		2FADB4F9256EC10B000745A9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2FADB4F9256EC10B000745A9 /* IMVDbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMVDbAPI.swift; sourceTree = "<group>"; };
 		2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMVDbModels.swift; sourceTree = "<group>"; };
 		2FADB503256F4667000745A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
-		2FADB50625700B0C000745A9 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,6 @@
 		2FADB4DA256EA7B8000745A9 = {
 			isa = PBXGroup;
 			children = (
-				2FADB50625700B0C000745A9 /* ImageDownloader.swift */,
 				2FADB4E5256EA7B8000745A9 /* IMVDb */,
 				2FADB4E4256EA7B8000745A9 /* Products */,
 			);
@@ -64,9 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				2FADB4E6256EA7B8000745A9 /* IMVDbApp.swift */,
-				2FADB4E8256EA7B8000745A9 /* ContentView.swift */,
+				2FADB4E8256EA7B8000745A9 /* SearchList.swift */,
+				2FA82D2625715C0300CF883A /* Searchbar.swift */,
 				2FADB4FC256ED1DB000745A9 /* IMVDbModels.swift */,
-				2FADB4F9256EC10B000745A9 /* API.swift */,
+				2F1D274625729C9E00E2BED6 /* MusicVideoDetail.swift */,
+				2FADB4F9256EC10B000745A9 /* IMVDbAPI.swift */,
+				2F25BC162570279A00C0E250 /* ImageDownloader.swift */,
+				2FA82D2A257172B200CF883A /* ImageCache.swift */,
 				2FADB503256F4667000745A9 /* RemoteImage.swift */,
 				2FADB4F6256EA828000745A9 /* MusicVideoRow.swift */,
 				2FADB4EA256EA7BC000745A9 /* Assets.xcassets */,
@@ -153,12 +162,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FADB4FA256EC10B000745A9 /* API.swift in Sources */,
-				2FADB4E9256EA7B8000745A9 /* ContentView.swift in Sources */,
-				2FADB50725700B0C000745A9 /* ImageDownloader.swift in Sources */,
+				2FADB4FA256EC10B000745A9 /* IMVDbAPI.swift in Sources */,
+				2FADB4E9256EA7B8000745A9 /* SearchList.swift in Sources */,
+				2F25BC172570279A00C0E250 /* ImageDownloader.swift in Sources */,
+				2FA82D2B257172B200CF883A /* ImageCache.swift in Sources */,
 				2FADB4FD256ED1DB000745A9 /* IMVDbModels.swift in Sources */,
 				2FADB504256F4668000745A9 /* RemoteImage.swift in Sources */,
+				2FA82D2725715C0300CF883A /* Searchbar.swift in Sources */,
 				2FADB4F7256EA828000745A9 /* MusicVideoRow.swift in Sources */,
+				2F1D274725729C9E00E2BED6 /* MusicVideoDetail.swift in Sources */,
 				2FADB4E7256EA7B8000745A9 /* IMVDbApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

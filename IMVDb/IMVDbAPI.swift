@@ -44,9 +44,9 @@ class IMVDb: ObservableObject {
     private let APIKeyHeader = "IMVDB-APP-KEY"
     private let APIKeyValue = "bhmiFPasJ1EeqjLDsMHqsIQ91zk42HCkFNeDSoa1"
     
-    enum EndPointType {
-        case Videos
-        case Entities
+    enum EndPointType: String {
+        case Videos = "Videos"
+        case Entities = "People"
     }
     
     /// All searches via the IMVDb API have pagination built in. You can send these parameters with any search to affect the pagination

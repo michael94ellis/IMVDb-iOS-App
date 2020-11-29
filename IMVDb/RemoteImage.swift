@@ -12,11 +12,14 @@ struct RemoteImage<Placeholder: View>: View {
     @StateObject private var loader: ImageDownloader
     private let placeholder: Placeholder
     
-    init(url: String, @ViewBuilder placeholder: () -> Placeholder) {
+    init(url: URL,
+         @ViewBuilder placeholder: () -> Placeholder,
+         @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
+    ) {
         self.placeholder = placeholder()
-        _loader = StateObject(wrappedValue: ImageDownloader(url: url))
+        _loader = StateObject(wrappedValue: ImageDownloader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
-    
+        
     var body: some View {
         content
             .onAppear(perform: loader.load)

@@ -12,7 +12,22 @@ struct MusicVideo: Codable, Identifiable {
     
     let song_title: String?
     let year: Int?
+    var yearString: String? {
+        guard let year = year else { return nil }
+        return String(year).replacingOccurrences(of: ",", with: "")
+    }
     let artists: [Artist]?
+    var artistList: String {
+        guard let artists = artists else { return "" }
+        var artistsString = ""
+        for artist in artists {
+            if artist != artists.last {
+                artistsString.append(", ")
+            }
+            artistsString.append(artist.name ?? "No Name")
+        }
+        return artistsString
+    }
     var image: [ImageLink]?
     
     let production_status: String?
